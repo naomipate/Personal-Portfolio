@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    color:antiquewhite;
+    background-color: rgb(157, 10, 98);
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20%;
+    color:antiquewhite;
+    background-color: rgb(157, 10, 98);
+}
+
