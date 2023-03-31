@@ -1,10 +1,18 @@
 h1 {
+    font-family: 'Tangerine';
+    font-size: 50px;
+    text-decoration: underline black;
     text-align: center;
     color:antiquewhite;
     background-color: rgb(157, 10, 98);
+    padding: 15px;
+    margin: 0px;
 }
 
 nav {
+    font-family: 'Tangerine';
+    font-size: 40px;
+    text-decoration: underline black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 20%;
@@ -12,3 +20,23 @@ nav {
     background-color: rgb(157, 10, 98);
 }
 
+nav a:link, nav a:visited {
+    color: antiquewhite;
+    text-decoration: underline black;
+}
+
+#logo {
+    padding: 25px;
+    block-size: 110px;
+}
+
+#searchbar {
+    padding: 20px;
+    border: 3px solid rgb(157, 10, 98);
+}
+
+#results {
+    font-size: 18px;
+    padding: 20px;
+    border: 3px solid rgb(157, 10, 98);
+}

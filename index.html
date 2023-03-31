@@ -5,24 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocktails and Flex</title>
-    <link src="style.css">
+    <link href="style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
 </head>
 <body>
     <header>
         <h1>Cocktails and Flex</h1>
         <nav>
-            <img src="C & F - smaller.png" alt="Cocktails and Flex Logo">
-            <p>Drinks</p>
-            <p>Ingredients</p>
-            <p>Random Drink</p>
+            <img  id="logo" src="Images/CandFsmaller.png" alt="Cocktails and Flex Logo">
+            <a href="drinks.html" id="drinks">Drinks</a>
+            <a href="#" id="ingredients">Ingredients</a>
+            <a href="#" id="randomizer">Random Drink</a>
         </nav>
     </header>
     <main>
+        <form>
         <section id="searchbar">
         <input id="searchbox" type="text" />
         <button type="submit">Search</button>
         </section>
+        </form>
         <section id="results">
+            <p>* Results will show up here *</p>
         </section>
     </main>
     <footer>
