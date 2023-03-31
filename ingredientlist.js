@@ -2,15 +2,15 @@ const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
 let userSearchTerm = document.querySelector("#searchbox");
 const indexpage = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mint`
 const searchCocktailName = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearchTerm.value}`;
-const searchCocktailIngredientName = "www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
-const cocktailDetailsByID = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
-const generateRandomCocktail = "www.thecocktaildb.com/api/json/v1/1/random.php";
+const searchCocktailIngredientName = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
+const cocktailDetailsByID = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
+const generateRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-fetch(indexpage)
+fetch(searchCocktailIngredientName)
     .then((response) => response.json())
     .then(displaySearchBar)
     .catch(displayError);
@@ -22,9 +22,9 @@ function displaySearchBar ({ results }) {
     
     if (userSearchTerm.value !== "") {
         for (let i = 0; i < results.length; i++) {
-            if (userSearchTerm.value === results.drinks[i].strDrink) {
+            if (userSearchTerm.value === results.ingredients[i].strIngredient) {
                 const drink = document.createElement("li");
-                drink.textContent = `${results.drinks[i].strDrink}, ${results.drinks[i].strAlcoholic}, ${results.drinks[i].strGlass}`;
+                drink.textContent = `${results.ingredients[i].strIngredient}, ${results.ingredients[i].strAlcohol}, ${results.ingredients[i].strType}`;
                 list.append(drink);
             } else {
                 const invalidSearch = document.createElement("p");
