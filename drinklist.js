@@ -1,37 +1,33 @@
 const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
 let userSearchTerm = document.querySelector("#searchbox");
-const indexpage = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mint`
-const searchCocktailName = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearchTerm.value}`;
-const searchCocktailIngredientName = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
-const cocktailDetailsByID = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
-const generateRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+const searchCocktailName = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`;
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-fetch(searchCocktailName)
+fetch(searchCocktailName + userSearchTerm.value)
     .then((response) => response.json())
     .then(displaySearchBar)
     .catch(displayError);
 });
 
-function displaySearchBar ({ results }) {
+function displaySearchBar (results) {
 // search drink name
     const list = document.querySelector("ul");
+
+    list.innerHTML = "";
     
     if (userSearchTerm.value !== "") {
-        for (let i = 0; i < results.length; i++) {
-            if (userSearchTerm.value === results.drinks[i].strDrink) {
+        for (let i = 0; i < results.drinks.length; i++) {
+            if (results.drinks[i].strDrink.toLowerCase().includes(userSearchTerm.value.toLowerCase())) {
                 const drink = document.createElement("li");
-                drink.textContent = `${results.drinks[i].strDrink}, ${results.drinks[i].strAlcoholic}, ${results.drinks[i].strGlass}`;
+                drink.innerHTML = `<a href="selected.html?id=${results.drinks[i].idDrink}">${results.drinks[i].strDrink}, ${results.drinks[i].strAlcoholic}, ${results.drinks[i].strGlass}</a>`;
                 list.append(drink);
-            } else {
-                const invalidSearch = document.createElement("p");
-                invalidSearch.textContent = "Please type in a valid drink name";
             }
         }
     }
+    userSearchTerm.value = "";
 }
 
 function displayError(error) {

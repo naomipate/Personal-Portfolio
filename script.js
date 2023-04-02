@@ -1,20 +1,12 @@
 const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
 let userSearchTerm = document.querySelector("#searchbox");
-const indexpage = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mint`
-const searchCocktailName = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearchTerm.value}`;
-const searchCocktailIngredientName = "www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
-const cocktailDetailsByID = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
-const generateRandomCocktail = "www.thecocktaildb.com/api/json/v1/1/random.php";
+const indexpage = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17206";
 const form = document.querySelector("form");
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
 
 fetch(indexpage)
     .then((response) => response.json())
     .then(displaySearchBar)
     .catch(displayError);
-});
 
 function displaySearchBar ({ results }) {
 // search drink name
