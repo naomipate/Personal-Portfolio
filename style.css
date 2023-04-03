@@ -25,6 +25,11 @@ nav a:link, nav a:visited {
     text-decoration: underline black;
 }
 
+nav a:hover {
+    color: antiquewhite;
+    text-decoration: underline antiquewhite;
+}
+
 #logo {
     padding: 25px;
     block-size: 110px;
