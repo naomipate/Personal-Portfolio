@@ -4,7 +4,7 @@ h1 {
     text-decoration: underline black;
     text-align: center;
     color:antiquewhite;
-    background-color: rgb(157, 10, 98);
+    background-color: rgb(133, 3, 81);
     padding: 15px;
     margin: 0px;
 }
@@ -17,7 +17,7 @@ nav {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 20%;
     color:antiquewhite;
-    background-color: rgb(157, 10, 98);
+    background-color: rgb(133, 3, 81);
 }
 
 nav a:link, nav a:visited {
@@ -29,14 +29,40 @@ nav a:link, nav a:visited {
     padding: 25px;
     block-size: 110px;
 }
+main {
+    background-color: rgb(170, 155, 155);
+    margin: 0px;
+    padding: 20px
+}
 
-#searchbar {
+#searchbar,
+#ingredientList{
     padding: 20px;
-    border: 3px solid rgb(157, 10, 98);
+    border: 3px solid rgb(133, 3, 81);
 }
 
 #results {
     font-size: 18px;
     padding: 20px;
-    border: 3px solid rgb(157, 10, 98);
+    border: 3px solid rgb(133, 3, 81);
+}
+
+#drinkPic {
+    padding: 25px;
+    block-size: 250px;
+}
+
+#homepageDrink {
+    block-size: 450px;
+}
+
+footer a:link, footer a:visited {
+    color: antiquewhite;
+}
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    color: antiquewhite;
+    background-color: rgb(133, 3, 81);
 }

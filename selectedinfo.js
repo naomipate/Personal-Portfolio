@@ -10,6 +10,8 @@ fetch(cocktailDetailsByID)
 
 function displayInstructions (results) {
 // ingredients and measurements
+    const drinkTitle = document.querySelector("h2");
+    drinkTitle.textContent = `${results.drinks[0].strDrink}`;
     const img = document.querySelector("#drinkPic");
     img.setAttribute("src", results.drinks[0].strDrinkThumb);
 
